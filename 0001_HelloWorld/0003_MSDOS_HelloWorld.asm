@@ -36,5 +36,5 @@ section .text ; code section
     int 0x21
 
 
-; nasm -fbin -o 0002_WindowsHelloWorld.obj 0002_WindowsHelloWorld.asm
+; nasm -fbin -o 0003_MSDOS_HElloWorld.obj 0003_MSDOS_HelloWorld.asm
 ; ...

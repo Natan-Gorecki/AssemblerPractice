@@ -37,5 +37,5 @@ message:
     db 'Hello, World', 10
 message_end:
 
-; nasm -fwin32 01_WindowsHelloWorld.asm
+; nasm -fwin32 0001_HelloWorldWithWindowsAPI.asm
 ; link /subsytem:console /nodefaultlib /entry:start 0002_HelloWorldWithWindowsAPI.obj kernel32.lib
