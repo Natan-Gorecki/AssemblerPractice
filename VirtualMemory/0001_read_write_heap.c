@@ -159,15 +159,15 @@ int main(int argc, char* argv[])
             printf("[ERROR] Can't find: %s\n", argv[2]);
             return 9;
         }
-        printf("[*] Found %s at %p\n", search_string, (void*)search_string);
+        search_string = (char*)((long)addr_start + ((long)search_string - (long)mem_buffer));
+        printf("[*] Found %s at %p\n", argv[2], (void*)search_string);
 
 
         // seek to correct place 
-        long offset = (long)search_string - (long)mem_buffer;
-        seek_result = fseek(mem_file, (long)addr_start + offset, SEEK_SET);
+        seek_result = fseek(mem_file, (long)search_string, SEEK_SET);
         if(seek_result != 0) 
         {
-            printf("[ERROR] Cannot seek to specified address %ld\n", (long)addr_start + offset);
+            printf("[ERROR] Cannot seek to specified address %p\n", (void*)search_string);
             return 10;
         }
 
