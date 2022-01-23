@@ -50,13 +50,13 @@ int main(int argc, char* argv[])
     FILE* maps_file = fopen(maps_filename, "r");
     if (maps_file == NULL)
     {
-        printf("[ERROR] Can not open file %s:", maps_filename);
+        printf("[ERROR] Can not open file %s:\n", maps_filename);
         return 3;
     }
     FILE* mem_file = fopen(mem_filename, "rb+");
     if (maps_file == NULL)
     {
-        printf("[ERROR] Can not open file %s:", mem_filename);
+        printf("[ERROR] Can not open file %s:\n", mem_filename);
         return 4;
     }
 
