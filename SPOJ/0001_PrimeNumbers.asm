@@ -91,13 +91,11 @@ is_prime:
 
     cmp esi, 3 ; number <= 3
     jle .yes
-
-    mov ebx, esi ; number % 2 == 0
-    and ebx, 1
-    cmp ebx, 0
+    
+    test esi, 0x1 ; number % 2 == 0
     je .no
 
-    mov eax, esi ; number % 2 == 0
+    mov eax, esi ; number % 3 == 0
     xor edx, edx
     mov ebx, 3 
     div ebx 
